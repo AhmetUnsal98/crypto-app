@@ -126,24 +126,40 @@ const Table = () => {
         </table>
       </div>
       <div className="table-bottom-container">
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+        <div
+          className="gotoButton"
+          onClick={() => gotoPage(0)}
+          disabled={!canPreviousPage}
+        >
           {"<<"}
-        </button>
+        </div>
 
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        <div
+          className="iterationButton"
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+        >
           {"Previous"}
-        </button>
+        </div>
 
         <span>
           Page
           {pageIndex + 1} of {pageOptions.length}
         </span>
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        <div
+          className="iterationButton"
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+        >
           Next
-        </button>
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        </div>
+        <div
+          className="gotoButton"
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+        >
           {">>"}
-        </button>
+        </div>
       </div>
     </div>
   );

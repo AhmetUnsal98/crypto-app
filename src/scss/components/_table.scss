@@ -29,6 +29,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+
         button {
             width: auto;
             height: 32px;
@@ -41,15 +42,21 @@
 
     .table-wrapper {
         display: flex;
-        width: 98%;
+        width: 95%;
     }
 
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
         width: 100%;
+        :hover {
+            transition: 0.2s;
+            background-color: lightgray;
+        }
     }
-
+    tbody {
+        cursor: pointer;
+    }
     th {
         border-bottom: 1px solid lightgray;
         text-align: left;

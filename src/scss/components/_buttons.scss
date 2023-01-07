@@ -1,0 +1,16 @@
+@import "../abstracts/variables";
+.iterationButton {
+    background-color: $header-bg-color;
+    color: white;
+    padding: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 6px;
+    &:hover {
+        background-color: lightgray;
+        transition: 0.5s;
+    }
+}
+.gotoButton {
+    @extend .iterationButton;
+}
