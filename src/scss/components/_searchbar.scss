@@ -1,3 +1,4 @@
+@import "../abstracts/variables";
 .search-bar {
     width: 12rem;
     display: flex;
@@ -13,7 +14,7 @@
         margin: 0;
         padding-left: 2rem;
         border: 0;
-        background-color: #eae7e4;
+        background-color: $search-bar-bg-color;
         font-size: 1rem;
         border-radius: 0.4rem;
     }

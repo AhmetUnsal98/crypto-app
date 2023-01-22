@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useNavigate, useNavigation } from "react-router-dom";
 import React, { useState, useEffect, useMemo } from "react";
 import {
   useTable,
@@ -6,12 +7,12 @@ import {
   useGlobalFilter,
   usePagination,
 } from "react-table";
-import "../scss/main.scss";
+import "../../scss/main.scss";
 import SearchBar from "./SearchBar";
 
 const Table = () => {
   const [data, setCoins] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const getCoins = async () => {
       try {
@@ -25,7 +26,7 @@ const Table = () => {
     };
     getCoins();
   }, []);
-  console.log(data);
+
   const COLUMNS = [
     {
       Header: " ",
@@ -109,11 +110,18 @@ const Table = () => {
               </tr>
             ))}
           </thead>
+
           <tbody {...getTableBodyProps()}>
             {page.map((row) => {
               prepareRow(row);
+
               return (
-                <tr {...row.getRowProps()}>
+                <tr
+                  onClick={() => {
+                    navigate("/" + row.original.id);
+                  }}
+                  {...row.getRowProps()}
+                >
                   {row.cells.map((cell) => {
                     return (
                       <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
